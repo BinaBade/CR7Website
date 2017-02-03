@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+  <title>Contact US</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="js/validateForm.js" />
+
+<!--javascript for form validation begins-->
+
+<script>
+            function validateForm()
+            {
+            var fname=document.forms["myForm"]["fname"].value; 
+            var lname=document.forms["myForm"]["lname"].value;
+            var mobile=document.forms["myForm"]["mobile"].value;
+            var age=document.forms["myForm"]["age"].value;
+            var gender=document.forms["myForm"]["gender"].value;
+            var email=document.forms["myForm"]["email"].value;
+            
+              if (fname=="")
+              {
+              alert("First name must be filled out");
+              return false;
+              }
+              
+              if (!isNaN(fname)) //isNaN check whether the given number is actual number or not
+              {
+              alert("Please enter string value for first name");
+              return false;
+              }
+              
+              if(!isNaN(mobile)){
+                if(mobile.length!=10){
+                alert("mobile number should be 10 digit exact");
+                return false;
+                }
+              }else{
+                alert("Please enter numeric value");
+                return false;
+              }
+              
+              if(age<=0 || age>130){
+                alert("Please enter a valid age");
+                return false;
+              }
+              
+              if(gender=="m"){
+                alert("Male");
+              }else{
+                alert("Female");
+              }
+              
+              var atpos = email.indexOf("@");
+              var dotpos = email.lastIndexOf(".");
+              if(atpos<1 || dotpos<atpos || dotpos+2>=email.length){
+                alert("Not a valid email address");
+                return false;
+              }
+            }
+
+
+        </script>
+    <!--javascript for form validation ends-->
+
+
+</head>
+
+<body>
+  <!--web page begins-->
+
+  <div id="main_container">
+  <!--header begins-->
+  	<div id="header" >
+      	<div class="logo" ><a href="index.html"><img src="images/logo.png" border="0" alt="" title="" /></div>       
+      </div>
+          <div class="menu">
+          	<ul>                                                                         
+          	<li class="selected"><a href="index.html">Home</a></li>
+                  <li><a href="introduction.html">Introduction</a></li>
+                  <li><a href="career.html">Career</a></li>
+                  <li><a href="stats.html">Statistics</a></li>
+                  <li><a href="achivements.html">Achivement</a></li>
+                  <li><a href="personal@life.html">Personal life</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+          	</ul>
+          </div>
+
+          <!--header ends-->
+
+          
+      <div class="center_content">
+      
+       	<div class="center_left">
+          	<p class="welcome">
+              <p>Contact Us </p>
+              <form name="myForm" action="message.html" onsubmit="return validateForm()" method="post">
+
+                <label>First Name:</label><input type="text" name="fname">
+                </br><br>
+                <label>Last Name:</label><input type="text" name="lname">
+                </br><br>
+                <label>Mobile no:</label><input type="text" name="mobile">
+                </br><br>
+                <label>Age:</label><input type="text" name="age">
+                </br><br>
+                <label>Gender:</label>
+                    <input type="radio" name="gender" value="m">Male 
+                    <input type="radio" name="gender" value="f">Female
+                </br>   <br>
+                <label>Email:</label><input type="text" name="email">
+                </br><br>
+                <label for="message">Your message:</label><br />
+                  <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+                  <input type="submit" value="Submit">
+
+              </form>
+            </p>
+
+
+
+           
+             
+              
+              
+          </div> 
+          
+          
+          <div class="center_right">
+          
+          
+          
+                          <div class="text_box">
+                          <div class="title">CR7 links</div>
+                                  <ul class="list">
+                              <li><span>1</span><a href="index.html">Christanldo</a></li>
+                              <li><span>2</span><a href="index.html">Goalnepal</a></li>
+                              <li><span>3</span><a href="index.html">Fifa</a></li>
+                              <li><span>4</span><a href="index.html">Goal.com</a></li>
+                          </ul>            
+                          </br>
+                          </br>
+                          </div>
+                          </br>
+                          
+                          <div class="testimonials">
+                          	<div class="title">CR7 Quote</div>
+                              <div class="text_box">
+                               <p class="testimonial">
+                               “I have two Golden Boot awards at home. It would be nice to win another, but I wouldn't mind it if I didn't..”<br />
+                               <strong>Christano Ronaldo</strong>
+                               
+                               </p>
+                              
+                              
+                              </div>                    
+                          
+                          </div>
+          
+
+          </div>  
+          
+          <div class="clear"></div> 
+      
+      </div>    
+      <!--Contents ends-->
+
+      <!--footer begins-->
+
+    
+    <div id="footer">                                              
+        
+        <p>Bina  &copy; 2015 |  | Copyright by <a href="http://www.google.com" rel="nofollow">Bina</a></p>
+     
+        </div>   
+    
+    </div>
+    
+    
+    <!--footer ends-->
+
+</div>
+<!-- end of main_container -->
+
+</body>
+</html>
